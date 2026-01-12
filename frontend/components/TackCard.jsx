@@ -25,7 +25,12 @@ function TaskCard() {
 
             <ul>
                 {taskList.map((task, index) => (
-                    <li key={index}>{task}</li>
+                    <li key={index}>
+                        {task}
+                        <button onClick={() => setTaskList(taskList.filter((_, i) => i !== index))}>
+                            ❌
+                        </button>
+                    </li>
                 ))}
             </ul>
         </div>
